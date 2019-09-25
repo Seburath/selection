@@ -7,7 +7,9 @@ Objetivo:
 - Limpiar el código.
 
 Reglas:
-- Empezamos a las 7 pm, terminamos a las 10 pm.
+- El repositorio se va a mantener vacio hasta que la selección empiece.
+- Empezamos a las 7pm Ecuador / 8pm Venezuela / 9pm Argentina
+- Terminamos a las 10pm Ecuador / 11pm Venezuela / 12am Argentina
 
 Ojo!
 - No envies tu pull request antes de las 10:00 pm, asi evitamos sospechas de copias.
