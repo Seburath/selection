@@ -1,5 +1,5 @@
 # seleccion_0
-Proceso de selección del 26 de septiembre de 2019.
+Proceso de selección del 25 de septiembre de 2019.
 
 Objetivo:
 - Enviar solo un pull request que arregle lo máximo posible este repositorio.
