@@ -28,7 +28,7 @@ class ScrapperBS4():
         'Nasdaq': {
             'url': 'https://www.interactivebrokers.com/en/index.php?f=2222&exch=nasdaq&showcategories=STK&p=&cc=&limit=100&page=',
             'minP': 1,
-            'maxP': 35,
+            'maxP': 34,
             'ran_end': 15,
         },
         'Nyse': {
