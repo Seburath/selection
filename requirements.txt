@@ -5,6 +5,7 @@ chardet==3.0.4
 idna==2.8
 lxml==4.4.1
 peewee==3.11.2
+PyMySQL==0.9.3
 requests==2.22.0
 soupsieve==1.9.3
 urllib3==1.25.6
