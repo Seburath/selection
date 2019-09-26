@@ -15,12 +15,12 @@ Ojo!
 - No envies tu pull request despues de la hora de finalización, asi evitamos sospechas de que copiaste.
 
 Resultados:
-- 60 inscritos, 6 pull requests
-- Añadí como yo arregle este script (nada perfecto (de hecho la función fuse duplicates es tonta jaja)) el archivo es scraper.py 
-- Una persona mas no pudo hacer el pull request (supongo que por algun bloqueo de seguridad de GitHub)
-- Mañana en la mañana publico el seleccionado
-
+- luisemp completo todos los requerimentos y creo el código mas fácil de entender #4
+- 60 inscritos en los formularios, 8 pull requests.
+- Añadí como yo arregle este script hace un tiempo (nada perfecto (de hecho la función fuse_duplicates es tonta jajaja)) el archivo es scraper.py 
 
 Decidí dejar este repositorio público por si a alguien le sirve en el futuro.
-Recuerda, todo lo que se evaluó puede ser aprendido en menos de un mes, en las comunidades de Python siempre estamos dispuestos a ayudarte en tu aprendizaje.
-Cualquier duda o sugerencia me puedes escribir con total confianza a: t.me/seburath
+
+Todo lo que se evaluó puede ser aprendido en menos de un mes, en las comunidades de Python siempre estamos dispuestos a ayudarte en tu aprendizaje.
+
+No comente los otros pull requests pero cualquier duda o sugerencia me puedes escribir con total confianza a: t.me/seburath
