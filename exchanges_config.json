@@ -1,0 +1,33 @@
+{
+    "nasdaq": {
+        "last_page": 34,        
+        "ran_ini": 3,
+        "ran_end": 400,
+        "ran_ini_last_page": 3,
+        "ran_end_last_page": 15,
+        "limit_page": 100,
+        "main_url": "https://www.interactivebrokers.com/en/index.php",
+        "categories": "STK&p=&cc="
+    },
+    "nyse": {
+        "last_page": 86,        
+        "ran_ini": 3,
+        "ran_end": 400,
+        "ran_ini_last_page": 3,
+        "ran_end_last_page": 372,
+        "limit_page": 100,
+        "main_url": "https://www.interactivebrokers.com/en/index.php",
+        "categories": "STK&p=&cc="
+
+     },
+     "amex": {
+        "last_page": 86,        
+        "ran_ini": 3,
+        "ran_end": 400,
+        "ran_ini_last_page": 3,
+        "ran_end_last_page": 368,
+        "limit_page": 100,
+        "main_url": "https://www.interactivebrokers.com/en/index.php",
+        "categories": "STK&p=&cc="
+     }
+}
