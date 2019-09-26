@@ -1,7 +1,11 @@
 import peewee
 from playhouse.db_url import connect
 import datetime
-
+'''
+1 - Install MySQL and change the connection values.
+2 - Create the stock_market table.
+3 - Run this file from the CLI, once it is executed it will create the symbols' column.
+'''
 database = peewee.MySQLDatabase('stock_market', host='localhost', port=3306,user='root', password='root')
 
 class Symbol(peewee.Model):
