@@ -1,0 +1,15 @@
+Adjunto mi solucion como Notebook de Jupyter para mejor visualizacion, adicionalmente como scripts, 
+realice 2 scripts, uno solo la extraccion de datos y otro con extraccion de datos y almacenamiento 
+en Postgresql.
+
+
+Autor: Freddy Abad
+
+
+
+I attach my solution as Jupyter Notebook for better visualization, additionally as scripts,
+perform 2 scripts, one with data extraction and one with data extraction and storage
+in Postgresql.
+
+
+Author: Freddy Abad
