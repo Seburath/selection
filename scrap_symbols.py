@@ -1,95 +1,83 @@
-# esto es un script que escribí hace un tiempo y funciona.
-# pero el código es terrible, con pésimas prácticas, duele leer.
-# si consideras que todo deberia ser borrado y quieres escribir algo diferente
-# desde 0, no hay problema.
-# no hace falta saber pep 8 de memoria, un plugin en el editor ayuda.
-# arreglar esto puede tomar un tiempo, pero si lo terminas y te queda tiempo...
-# estaria bueno que todo se guarde en mysql, cualquier orm que sepas esta ok.
-
-# QUE HACE ESTE CODIGO:
-# el scraper va a al sitio de interactive brokers y guarda en csv todos los
-# simbolos de tres exchanges (NASDAQ, NYSE y AMEX).
-
-# interactive brokers es una plataforma de compra y venta de acciones.
-# los simbolos son empresas (TSLA para Tesla, APPL para Apple).
-# los exchanges son mercados (NYSE para bolsa de New York).
-
-# recuerda las sabias palabras del tío Bob:
-'''A comment is a failure to express yourself in code.
-   If you fail, then write a comment; but try not to fail.'''
-# si haces comentarios, es mejor que estén en ingles
-
-import requests
+# -*- coding: utf-8 -*-
+from urllib import parse, request
 import csv
 from bs4 import BeautifulSoup
 import os
+ 
+NASDAQ = 'nasdaq'
+NYSE = 'nyse'
+AMEX = 'amex'
+ 
 os.remove("symbols.csv")
 file = open('symbols.csv', 'w')
 file.truncate()
 writer = csv.writer(file)
-list = []
-exchanges = ['nasdaq', 'nyse', 'amex']
+ 
+exchanges_dict = {
+    NASDAQ  :
+            {'pages_max': 5,
+               'params': {
+                   'f': 2222,
+                   'exch': NASDAQ,
+                   'showcategories': 'STK',
+                   'p': '',
+                   'cc': '',
+                   'limit': 100,
+                }
+            },
+    NYSE:
+        {'pages_max': 87,
+            'params': {
+                'f': 2222,
+                'exch': NYSE,
+                'showcategories': 'STK',
+                'p': '',
+                'cc': '',
+                'limit': 100,
+            }
+        },
+    AMEX:
+        {'pages_max': 87,
+            'params': {
+                'f': 2222,
+                'exch': AMEX,
+                'showcategories': 'STK',
+                'p': '',
+                'cc': '',
+                'limit': 100,
+            }
+        },
+}
 
-#nasdaq
-for page in range(1,35):
-    r  = requests.get('https://www.interactivebrokers.com/en/index.php?f=2222&exch=nasdaq&showcategories=STK&p=&cc=&limit=100&page=' + str(page))
-    data = r.text
-    soup = BeautifulSoup(data, features='lxml')
-    x = soup.contents
-    x = str(x)
-    x = x.split('<td>')
-    if page < 34:
-        ran_ini = 3
-        ran_end = 400
-    else:
-        ran_ini = 3
-        ran_end = 15
-    for i in range(ran_ini,ran_end)[0::4]:
-        vals = x[i][:-6], 'STK', 'SMART', x[i+1][:3]
-        if vals not in list:
-            print(i, 'NASDAQ', vals)
-            list.append(vals)
+base_url = "https://www.interactivebrokers.com/en/index.php"
+symbols = set()
+index = 0
+for exchange, value in exchanges_dict.items():
+    pages_max = value['pages_max']
+    params = value['params']
+    for page in range(1, pages_max):
+        params['page'] = page
+        query_string = parse.urlencode(params) 
+        url = base_url + "?" + query_string
+        with request.urlopen( url ) as response:  
+            response_text = response.read()
+            xml = BeautifulSoup(response_text, features='lxml')
+            section = xml.find_all('section', id="exchange-products")
+            rows = section[0].find_all('tr')
+            for row in rows:
+                cells = row.find_all('td')
+                if len(cells) > 0:
+                    entry = (
+                        cells[0].get_text(),
+                        params['showcategories'],
+                        'SMART',
+                        cells[3].get_text()
+                    )
+                    print(index, exchange, entry)
+                    symbols.add(entry)
+                index += 1
 
-#nyse
-for page in range(1,87):
-    r  = requests.get('https://www.interactivebrokers.com/en/index.php?f=2222&exch=nyse&showcategories=STK&p=&cc=&limit=100&page=' + str(page))
-    data = r.text
-    soup = BeautifulSoup(data, features='lxml')
-    x = soup.contents
-    x = str(x)
-    x = x.split('<td>')
-    if page < 86:
-        ran_ini = 3
-        ran_end = 400
-    else:
-        ran_ini = 3
-        ran_end = 372
-    for i in range(ran_ini,ran_end)[0::4]:
-        vals = (x[i][:-6], 'STK', 'SMART', x[i+1][:3])
-        if vals not in list:
-            print(i, 'NYSE', vals)
-            list.append(vals)
-
-#amex
-for page in range(1,87):
-    r  = requests.get('https://www.interactivebrokers.com/en/index.php?f=2222&exch=amex&showcategories=STK&p=&cc=&limit=100&page=' + str(page))
-    data = r.text
-    soup = BeautifulSoup(data, features='lxml')
-    x = soup.contents
-    x = str(x)
-    x = x.split('<td>')
-    if page < 86:
-        ran_ini = 3
-        ran_end = 400
-    else:
-        ran_ini = 3
-        ran_end = 368
-    for i in range(ran_ini,ran_end)[0::4]:
-        vals = (x[i][:-6], 'STK', 'SMART', x[i+1][:3])
-        if vals not in list:
-            print(i, 'AMEX', vals)
-            list.append(vals)
-
-for val in list:
-    writer.writerow(val)
+sorted_symbols = sorted(symbols)
+for s in sorted_symbols:
+    writer.writerow(s)
 file.close()
