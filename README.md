@@ -16,7 +16,7 @@ Ojo!
 
 Resultados:
 - 60 inscritos, 6 pull requests
-- Añadí como yo arregle este script (nada perfecto) el archivo es scraper.py
+- Añadí como yo arregle este script (nada perfecto (de hecho la función fuse duplicates es tonta jaja)) el archivo es scraper.py 
 - Una persona mas no pudo hacer el pull request (supongo que por algun bloqueo de seguridad de GitHub)
 - Mañana en la mañana publico el seleccionado
 
