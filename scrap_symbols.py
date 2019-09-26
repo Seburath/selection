@@ -19,10 +19,12 @@
    If you fail, then write a comment; but try not to fail.'''
 # si haces comentarios, es mejor que estén en ingles
 
+from database import Symbol
 import requests
 from bs4 import BeautifulSoup
 
 exchanges = ['nasdaq', 'nyse', 'amex']
+#exchanges = ['lse','tse']
 
 for exchange in exchanges:
     r = requests.get('https://www.interactivebrokers.com/en/index.php?f=2222&exch={}&showcategories=STK&p=&cc=&limit=100&page=1'.format(exchange))
@@ -30,8 +32,8 @@ for exchange in exchanges:
     soup = BeautifulSoup(data, features='lxml')
     pagination = soup.find_all('ul', class_='pagination')
     last_page = int([ul.find_all('li')[-2].text for ul in pagination ][0])
-    for page_num in range(1,last_page+1):
-        page_request = requests.get('https://www.interactivebrokers.com/en/index.php?f=2222&exch={}&showcategories=STK&p=&cc=&limit=100&page={}'.format(exchange,page_num))
+    for page_num in range(1, last_page+1):
+        page_request = requests.get('https://www.interactivebrokers.com/en/index.php?f=2222&exch={}&showcategories=STK&p=&cc=&limit=100&page={}'.format(exchange, page_num))
         data = page_request.text
         soup = BeautifulSoup(data, features='lxml')
         tables = soup.find_all('table')
@@ -39,5 +41,11 @@ for exchange in exchanges:
         table_tr = table_body[0].find_all('tr')
         for tr in table_tr:
             td = tr.find_all('td')
-            # FORMAT 175 NYSE ('ACAMU', 'STK', 'SMART', 'USD')
-            print("{} {}, STK, SMART, {}".format(exchange.upper(), td[0].text,td[3].text))
+            Symbol.create(
+                        stock_symbol=td[0].text,
+                        stock_exchange=exchange.upper(),
+                        currency=td[3].text,
+                        routing='SMART',
+                        unknown_field='STK'
+                        )
+            print("{} {}, STK, SMART, {}".format(exchange.upper(), td[0].text, td[3].text))
