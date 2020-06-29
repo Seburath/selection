@@ -12,25 +12,24 @@
 # this code is ugly!
 
 # remember the wisdom from uncle Bob:
-'''A comment is a failure to express yourself in code.
-   If you fail, then write a comment; but try not to fail.'''
+''' A comment is a failure to express yourself in code.
+   If you fail , then write a comment; but try not to fail. '''
 
 
-import codecs
-from os import system
-from backtester import bt
-from flask import Flask
+import  codecs
+from  os  import  system
+from  backtester  import  bt
+from  flask  import  Flask
+
+app  =  Flask ( __name__ )
 
 
-app = Flask(__name__)
-
-
-@app.route('/')
-def hello():
-    system('python3 backtester.py')
-    page = codecs.open('SmaCross.html', 'r').read()
+@app . route ( '/' )
+def  hello ():
+    system ( 'python3 backtester.py' )
+    page  =  codecs . open ( 'SmaCross.html' , 'r' ) . read ()
     return page
 
 
-if __name__ == '__main__':
-    app.run(host="0.0.0.0", debug=True)
+if __name__  ==  '__main__' :
+    app . run ( host = "0.0.0.0" , debug = True )
