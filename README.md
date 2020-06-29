@@ -17,7 +17,7 @@ Caution!
 - Do not send your pull request after the end time, so we avoid suspicions that you copied.
 
 Clarification:
-Branch 0 has a past selection process, you can see it as a reference, but this is test will be diferent.
+- Branch 0 has a past selection process, you can see it as a reference, but this is test will be diferent.
 
 Any question you can ask me at:
 t.me/seburath
