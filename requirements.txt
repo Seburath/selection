@@ -1,3 +1,5 @@
 wheel
 flask
 backtesting
+bs4
+
