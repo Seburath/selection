@@ -1,7 +1,8 @@
 from backtesting import Backtest, Strategy
 from backtesting.lib import crossover
 
-from backtesting.test import SMA, GOOG
+from backtesting.test import SMA
+from scraper import scraper
 
 
 class SmaCross(Strategy):
@@ -19,7 +20,7 @@ class SmaCross(Strategy):
             self.sell()
 
 
-bt = Backtest(GOOG, SmaCross, cash=10000, commission=.002)
+bt = Backtest(scraper, SmaCross, cash=10000, commission=.002)
 
 output = bt.run()
 bt.plot()

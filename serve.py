@@ -21,7 +21,6 @@ from os import system
 from backtester import bt
 from flask import Flask
 
-
 app = Flask(__name__)
 
 
