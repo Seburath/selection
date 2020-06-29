@@ -1,3 +1,7 @@
+''' 
+install yfinance with >>>>> pip install yfinance --upgrade --no-cache-dir
+''' 
+
 from backtesting import Backtest, Strategy
 from backtesting.lib import crossover
 
