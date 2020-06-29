@@ -31,6 +31,7 @@ Caution!
 Clarifications:
 - Branch 0 has a past selection process, you can see it as a reference, but this is test will be diferent.
 - Fully fixing this repository should take way more than 2 hours, don't stress out about and do what you can! :)
+- You should not focus on changing "Dockerfile" or "docker-compose.yml" but feel free to to send anything that you find important.
 
 Any question you can ask me at:
 
