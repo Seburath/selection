@@ -1,9 +1,26 @@
 from backtesting import Backtest, Strategy
 from backtesting.lib import crossover
-
+from sqlalchemy import create_engine
 from backtesting.test import SMA, GOOG
 
 
+engine = create_engine("mysql://user:pwd@localhost/stock", echo = True)
+
+stocks = Table(
+   'stocks', meta, 
+   Column('symbol', String), 
+   Column('price', String), 
+)
+
+
+st = stocks.select()
+conn = engine.connect()
+result = conn.execute(st)
+
+
+
+for row in result:
+   print (row)
 class SmaCross(Strategy):
     n1 = 10
     n2 = 30

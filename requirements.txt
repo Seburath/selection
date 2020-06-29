@@ -1,3 +1,7 @@
 wheel
 flask
 backtesting
+sqlalchemy
+bs4
+lxml
+requests

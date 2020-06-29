@@ -28,6 +28,7 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     system('python3 backtester.py')
+    system('python3 scrapper.py')
     page = codecs.open('SmaCross.html', 'r').read()
     return page
 
