@@ -19,6 +19,7 @@
 import codecs
 from os import system
 from backtester import bt
+from TESTscrape import parse
 from flask import Flask
 
 
@@ -33,4 +34,5 @@ def hello():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", debug=True)
+    # app.run(host="0.0.0.0", debug=True)
+    app.run(host=5000, debug=True)
