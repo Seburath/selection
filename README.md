@@ -1,4 +1,4 @@
-# selection_1 (Thank you for your participation, I will anounce the results at 18:00 GMT)
+# selection_1 (Thank you for your participation, I will announce the results at 18:00 GMT)
 Selection process of June 29, 2020 [12:00 GMT]
 
 Raise the containers:
