@@ -3,6 +3,13 @@ from backtesting.lib import crossover
 
 from backtesting.test import SMA, GOOG
 
+import yfinance
+
+yfdata = yfinance.Ticker("MSFT")
+
+yfdata.info
+
+data = yfdata.history(period="ytd")
 
 class SmaCross(Strategy):
     n1 = 10
@@ -19,7 +26,7 @@ class SmaCross(Strategy):
             self.sell()
 
 
-bt = Backtest(GOOG, SmaCross, cash=10000, commission=.002)
+bt = Backtest(data, SmaCross, cash=10000, commission=.002)
 
 output = bt.run()
 bt.plot()
