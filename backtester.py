@@ -23,3 +23,10 @@ bt = Backtest(GOOG, SmaCross, cash=10000, commission=.002)
 
 output = bt.run()
 bt.plot()
+
+#solution
+
+from bs4 import BeautifulSoup
+
+url = "https://finance.yahoo.com/quote/AAPL?p=AAPL&.tsrc=fin-srch"
+
