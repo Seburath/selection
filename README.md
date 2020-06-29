@@ -10,7 +10,7 @@ Rules:
 - The repository will be kept empty until the selection begins.
 - We start at 12:00 GMT.
 - We finish at 14:00 GMT.
-- Do not answer messages during these three hours, to avoid chaos.
+- Do not answer messages during these two hours, to avoid chaos.
 
 Caution!
 - Do not send your pull request before the end time, so we avoid suspicions that someone will copy you.
