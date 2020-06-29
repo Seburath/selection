@@ -1,4 +1,15 @@
-# selection_1 (Thank you for your participation, I will announce the results at 18:00 GMT)
+# Results:
+# [geofferyj Added more data from GOOG with the cleanest and faster implementation #16]
+# 62 enrolled in the form,10 pull requests
+
+Thank you all for your time!
+This repository will keept open in case someone find it interesting in the future
+
+Any question or comment you can write me at:
+t.me/seburath
+
+#
+# selection_1
 Selection process of June 29, 2020 [12:00 GMT]
 
 Raise the containers:
@@ -32,7 +43,3 @@ Clarifications:
 - Branch 0 has a past selection process, you can see it as a reference, but this is test will be diferent.
 - Fully fixing this repository should take way more than 2 hours, don't stress out about and do what you can! :)
 - You should not focus on changing "Dockerfile" or "docker-compose.yml" but feel free to to send anything that you find important.
-
-Any question you can ask me at:
-
-t.me/seburath
