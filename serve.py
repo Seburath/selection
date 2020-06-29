@@ -18,19 +18,19 @@
 
 import codecs
 from os import system
-from backtester import bt
-from flask import Flask
 
+from backtester import back_test
+from flask import Flask
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def hello():
-    system('python3 backtester.py')
     page = codecs.open('SmaCross.html', 'r').read()
     return page
 
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=True)
+    system('python3 backtester.py')
