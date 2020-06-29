@@ -15,10 +15,7 @@ class SmaCross(Strategy):
     def init(self):
         self.sma1 = self.I(SMA, self.data.Close, self.n1)
         self.sma2 = self.I(SMA, self.data.Close, self.n2)
-        data = bt.feeds.YahooFinanceData(dataname='AAPL',
-                                 fromdate=datetime(2016, 1, 1),
-                                 todate=datetime(2019, 5, 31))
-
+        
     def next(self):
         if crossover(self.sma1, self.sma2):
             self.buy()
