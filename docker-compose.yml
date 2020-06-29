@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  cyberhead-mysql:
+    container_name: cyberhead-mysql
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: cyberhead
+    ports:
+      - "3306:3306"
+    restart: unless-stopped
+  cyberhead-rmq:
+    container_name: cyberhead-rmq
+    image: 'rabbitmq:3.6-management-alpine'
+    ports:
+      - '5672:5672'
+      - '15672:15672'
+    restart: unless-stopped
+  cyberhead:
+    container_name: cyberhead
+    environment:
+      CH_DB_NAME: cyberhead
+      CH_DB_HOST: database
+      CH_DB_USER: root
+      CH_DB_PASSWORD: root
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    command: sh -c "tail -f /dev/null"
+    volumes:
+      - .:/app
+    depends_on:
+      - cyberhead-mysql
+      - cyberhead-rmq
+    ports:
+      - 5000:5000
+      - 3000:3000
+    restart: always
+    links:
+      - "cyberhead-rmq:rabbit"
+      - "cyberhead-mysql:database"

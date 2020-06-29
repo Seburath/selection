@@ -1,7 +1,19 @@
 # selection_1
 Selection process of June 29, 2020 [12:00 GMT]
 
-[MASTER WILL BE EMPTY UNTIL THE TEST BEGINGS]
+Raise the containers:
+
+docker-compose up -d
+
+Install python requirementes:
+
+docker-compose exec cyberhead pip3 install -r requirements.txt
+
+Serve the backtesting:
+
+docker-compose exec cyberhead python3 serve.py
+
+This should serve a webpage on: http://localhost:5000
 
 Objective:
 - Send only one pull request that fix this repository
@@ -16,8 +28,10 @@ Caution!
 - Do not send your pull request before the end time, so we avoid suspicions that someone will copy you.
 - Do not send your pull request after the end time, so we avoid suspicions that you copied.
 
-Clarification:
+Clarifications:
 - Branch 0 has a past selection process, you can see it as a reference, but this is test will be diferent.
+- Fully fixing this repository should take way more than 2 hours, don't stress out about and do what you can! :)
 
 Any question you can ask me at:
+
 t.me/seburath
