@@ -1,7 +1,7 @@
 from backtesting import Backtest, Strategy
 from backtesting.lib import crossover
 
-from backtesting.test import SMA, 
+from backtesting.test import SMA
 import quandl
 
 quandl.ApiConfig.api_key= "1JzcSRocvMqEaHSrEyyB"
