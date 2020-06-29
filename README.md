@@ -1,4 +1,4 @@
-# seleccion_1
+# selection_1
 Selection process of June 29, 2020 [12:00 GMT]
 
 [MASTER WILL BE EMPTY UNTIL THE TEST BEGINGS]
