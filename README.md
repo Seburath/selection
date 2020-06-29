@@ -9,7 +9,7 @@ Objective:
 Rules:
 - The repository will be kept empty until the selection begins.
 - We start at 12:00 GMT.
-- We finish at 24:00 GMT.
+- We finish at 14:00 GMT.
 - Do not answer messages during these three hours, to avoid chaos.
 
 Caution!
