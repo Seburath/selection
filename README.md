@@ -13,7 +13,7 @@ Rules:
 - Do not answer messages during these three hours, to avoid chaos.
 
 Caution!
-- Do not send your pull request before the end time, so we avoid suspicions that they will copy you.
+- Do not send your pull request before the end time, so we avoid suspicions that someone will copy you.
 - Do not send your pull request after the end time, so we avoid suspicions that you copied.
 
 Clarification:
