@@ -1,26 +1,23 @@
-# seleccion_0
-Proceso de selección del 25 de septiembre de 2019.
+# seleccion_1
+Selection process of June 29, 2020 [12:00 GMT]
 
-Objetivo:
-- Enviar solo un pull request que arregle este repositorio.
+[MASTER WILL BE EMPTY UNTIL THE TEST BEGINGS]
 
-Reglas:
-- El repositorio se va a mantener vacio hasta que la selección empiece.
-- Empezamos a las 19:00 Ecuador / 20:00 Venezuela / 21:00 Argentina.
-- Terminamos a las 22:00 Ecuador / 23:00 Venezuela / 00:00 (medianoche) Argentina.
-- No respondo mensajes durante estas tres horas, para evitar el caos.
+Objective:
+- Send only one pull request that fix this repository
 
-Ojo!
-- No envies tu pull request antes de la hora de finalización, asi evitamos sospechas de que te copien.
-- No envies tu pull request despues de la hora de finalización, asi evitamos sospechas de que copiaste.
+Rules:
+- The repository will be kept empty until the selection begins.
+- We start at 12:00 GMT.
+- We finish at 24:00 GMT.
+- Do not answer messages during these three hours, to avoid chaos.
 
-Resultados:
-- luisemp completo todos los requerimentos y creo el código mas fácil de entender #4
-- 60 inscritos en los formularios, 8 pull requests.
-- Añadí como yo arregle este script hace un tiempo (nada perfecto (de hecho la función fuse_duplicates es tonta jajaja)) el archivo es scraper.py 
+Caution!
+- Do not send your pull request before the end time, so we avoid suspicions that they will copy you.
+- Do not send your pull request after the end time, so we avoid suspicions that you copied.
 
-Decidí dejar este repositorio público por si a alguien le sirve en el futuro.
+Clarification:
+Branch 0 has a past selection process, you can see it as a reference, but this is test will be diferent.
 
-Todo lo que se evaluó puede ser aprendido en menos de un mes, en las comunidades de Python siempre estamos dispuestos a ayudarte en tu aprendizaje.
-
-No comente los otros pull requests pero cualquier duda o sugerencia me puedes escribir con total confianza a: t.me/seburath
+Any question you can ask me at:
+t.me/seburath
