@@ -2,6 +2,10 @@ from backtesting import Backtest, Strategy
 from backtesting.lib import crossover
 
 from backtesting.test import SMA, GOOG
+import quandl
+
+quandl.ApiConfig.api_key= "1JzcSRocvMqEaHSrEyyB"
+data = quandl.get("WIKI/GOOGL")
 
 
 class SmaCross(Strategy):

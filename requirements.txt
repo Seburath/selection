@@ -1,3 +1,7 @@
 wheel
 flask
 backtesting
+Quandl
+quandl
+numpy
+pandas
