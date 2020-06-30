@@ -19,6 +19,7 @@
 import codecs
 from os import system
 from backtester import bt
+from TESTscrape import parse
 from flask import Flask
 
 

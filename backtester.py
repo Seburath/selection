@@ -18,8 +18,11 @@ class SmaCross(Strategy):
         elif crossover(self.sma2, self.sma1):
             self.sell()
 
-
 bt = Backtest(GOOG, SmaCross, cash=10000, commission=.002)
 
 output = bt.run()
 bt.plot()
+
+
+if __name__ == "__main__":
+    print(GOOG.tail())
