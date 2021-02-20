@@ -15,11 +15,11 @@ class SmaCross(Strategy):
     def next(self):
         if crossover(self.sma1, self.sma2):
             self.buy()
+
         elif crossover(self.sma2, self.sma1):
             self.sell()
 
 
-bt = Backtest(GOOG, SmaCross, cash=10000, commission=.002)
-
-output = bt.run()
-bt.plot()
+back_test = Backtest(GOOG, SmaCross, cash=10000, commission=.002)
+back_test.run()
+back_test.plot()
